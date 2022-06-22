@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
-
+import {name, a,location } from "./data"
 // TASK:
 // Write a function that searches through the input array / object
 // and returns the appropriate string path leading to the input query, if found
@@ -21,27 +21,10 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 // `pathGet(a, 'One expensive house like that')` = "a.user.location.address"
 // `pathGet(a, 'James')` = "a.user.name.firstName"
 
-const a = {
-  user: {
-    id: 1,
-    name: {
-      firstName: "James",
-      lastName: "Ibori",
-    },
-    location: {
-      city: "Ikoyi",
-      state: "Lagos",
-      address: "One expensive house like that",
-    },
-  },
-};
+
 
 function App() {
   const [searchPath, setSearchPath] = useState("");
-
-  const name = ["James", "Ibori"];
-  const location = ["Ikoyi", "lagos", "One expensive house like that"];
-
   const [input, setInput] = useState("");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -90,7 +73,7 @@ function App() {
         <input name="search" type="submit" />
       </form>
 
-      <div> {searchPath}</div>
+      <div > {searchPath}</div>
     </div>
   );
 }
